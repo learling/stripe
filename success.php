@@ -15,7 +15,7 @@
 <body>
   <div class="container">
     <div class="jumbotron mt-4">
-      <h2>Thank you for purchasing</h2>
+      <h2>Thank you for purchasing fake</h2>
       <h4><?php echo urldecode($GET["p"]); ?></h4>
       <hr>
       <p>Your transaction ID is <?php echo $GET["tid"]; ?></p>
