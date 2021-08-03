@@ -71,7 +71,7 @@ $names = substr($ids, 0, -2);
             <div class="text-light" id="card-errors" role="alert"></div>
         </div>
         <div class="card-footer text-center">
-          <button class="btn btn-lg mt-4">Pay <?php echo number_format($sum * 1, 2, ".", "") . " " . strtoupper(CURRENCY); ?> now</button>
+          <button class="btn btn-lg mt-4" id="pay-btn">Pay <?php echo number_format($sum * 1, 2, ".", "") . " " . strtoupper(CURRENCY); ?> now</button>
         </div>
       </div>
     </form>

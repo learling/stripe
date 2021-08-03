@@ -30,24 +30,27 @@ $currency = strtolower($POST["currency"]); // eur
 $description = urlencode($POST["description"]); // unique name(s)
 
 $stripe_secret = STRIPE_SECRET_TEST;
-$api_url = STRIPE_BASE_URL;
+$stripe_api_url = STRIPE_BASE_URL;
+$idempotency_key = $_SESSION["csrf_token"];
 
 $create_customer = <<<SH
-curl $api_url/customers \
+curl $stripe_api_url/customers \
   -u $stripe_secret \
-  -d email="$email"
+  -H "Idempotency-Key: cu_$idempotency_key" \
+  -d email="$email" \
   -d source="$token"
 SH;
 $json_customer = shell_exec($create_customer);
 $customer = json_decode($json_customer);
 
 $create_charge = <<<SH
-curl $api_url/charges \
+curl $stripe_api_url/charges \
   -u $stripe_secret \
+  -H "Idempotency-Key: ch_$idempotency_key" \
   -d amount=$price \
   -d currency=$currency \
   -d description="$description" \
-  -d source="$token"
+  -d customer="$customer->id"
 SH;
 $json_charge = shell_exec($create_charge);
 $charge = json_decode($json_charge);
