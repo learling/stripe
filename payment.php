@@ -14,7 +14,7 @@ foreach ($products as $product) {
   $ids .= $product["id"] . ", ";
   $sum += $product["price"] * 1;
 }
-$names = substr($ids, 0, -2);;
+$names = substr($ids, 0, -2);
 ?>
 
 <!DOCTYPE html>
