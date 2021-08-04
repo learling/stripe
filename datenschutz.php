@@ -1,5 +1,7 @@
 <?php
 require_once("config/contact.php");
+
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -9,6 +11,7 @@ require_once("config/contact.php");
   <title>Datenschutz</title>
 </head>
 <body>
+  <?php include_once("inc/navbar.php") ?>
   <div class="container">
     <div class="jumbotron mt-4">
       <h4>Datenschutz</h4>

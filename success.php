@@ -1,4 +1,6 @@
 <?php
+  session_start();
+
   if (!empty($_GET["tid"] && !empty($_GET["p"]))) {
     $GET = filter_var_array($_GET, FILTER_SANITIZE_STRING);
   } else {
@@ -13,6 +15,7 @@
   <title>Thank you</title>
 </head>
 <body>
+  <?php include_once("inc/navbar.php") ?>
   <div class="container">
     <div class="jumbotron mt-4">
       <h2>Thank you for purchasing fake</h2>

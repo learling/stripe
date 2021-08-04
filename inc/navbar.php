@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <nav class="navbar bg-dark justify-content-between mb-4">
   <a href="/" class="text-light brand">
     <h5>Testing Stripe</h5>
