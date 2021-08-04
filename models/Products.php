@@ -7,7 +7,7 @@ class Products {
   }
 
   public function listAll() {
-    $this->db->query("SELECT * FROM products");
+    $this->db->query("SELECT * FROM products WHERE active = 1");
 		return $this->db->resultset();
   }
 }
