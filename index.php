@@ -7,7 +7,7 @@ require_once("models/Products.php");
 session_start();
 
 $db_products = new Products();
-$products = $db_products->listAll();
+$products = $db_products->listActives();
 ?>
 
 <!DOCTYPE html>

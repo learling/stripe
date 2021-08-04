@@ -6,7 +6,7 @@ class Products {
     $this->db = new Database();
   }
 
-  public function listAll() {
+  public function listActives() {
     $this->db->query("SELECT * FROM products WHERE active = 1");
 		return $this->db->resultset();
   }
