@@ -64,7 +64,7 @@ $names = substr($ids, 0, -2);
             <div id="card-element" class="form-control">
             <!-- Stripe Element will be inserted here. -->
             </div>
-            <input required id="agree" type="checkbox" class="m-3">
+            <input required id="agree" type="checkbox" class="my-3">
             <label for="agree" class="m-3 text-light">
               Agree to <a target="_blank" href="/datenschutz.php">Datenschutz</a>
             </label>
